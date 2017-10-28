@@ -12,10 +12,8 @@ class UserProfile extends Preact.Component {
           <li>All videos</li>
           <li>Skills</li>
         </ul>
-        <div className="video-grid">
-        </div>
-        <div className="skills">
-        </div>
+        <div className="video-grid" />
+        <div className="skills" />
       </div>
     );
   }

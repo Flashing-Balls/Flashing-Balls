@@ -1,13 +1,13 @@
 import Preact from 'preact';
 import Video from '../Video';
-import User from './User'
+import User from '../User';
 import './post.sass';
 
 export default class Post extends Preact.Component {
   renderComments() {
     return this.props.data.comments.map( ( { user, text, id } ) => (
       <li key={ id }>
-        <p><User username={user} fullname={user} /> { text }</p>
+        <p><User username={ user } fullname={ user } /> { text }</p>
       </li>
       ) );
   }
@@ -16,7 +16,7 @@ export default class Post extends Preact.Component {
     return (
       <article className="post">
         <header className="post__header">
-          <User avatar={user} fullname={user} username={user} />
+          <User avatar={ user } fullname={ user } username={ user } />
         </header>
         <main>
           <section>
