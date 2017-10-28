@@ -10,6 +10,7 @@ import store from './store';
 
 import FeedPage from './FeedPage';
 import Header from './Header/';
+import VideoUpload from './VideoUpload/';
 
 class App extends Preact.Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Preact.Component {
                 component={ FeedPage }
               />
               <Route path="/user/:username" component={ UserProfile } />
+              <Route path="/videoupload/:username" component={ VideoUpload } />
             </main>
           </div>
         </Provider>

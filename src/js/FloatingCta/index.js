@@ -1,4 +1,5 @@
 import Preact from 'preact';
+import { Link } from 'react-router-dom';
 
 import './cta.sass';
 
@@ -34,9 +35,11 @@ export default class FloatingCta extends Preact.Component {
   render() {
     const visible = this.state.visible ? 'visible' : 'hidden';
     return (
+      <Link to={ `/videoupload/tony` } >
       <nav className={ `floating-cta floating-cta--${ visible }` }>
         <i className="material-icons">add</i>
       </nav>
+      </ Link>
     );
   }
 }
