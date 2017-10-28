@@ -8,18 +8,18 @@ const DATA = [
     comments: [
       {
         id: 0,
-        user: 'JJ',
-        text: '1',
+        user: 'James Johns',
+        text: 'Lorem ipsum dolor sit amet',
       },
       {
         id: 1,
-        user: 'TT',
-        text: '2',
+        user: 'Tina Turner',
+        text: 'Lorem ipsum dolor sit amet',
       },
       {
         id: 2,
-        user: 'ZZ',
-        text: '3',
+        user: 'Zoe Zandberg',
+        text: 'Lorem ipsum dolor sit amet',
       },
     ],
   },
@@ -28,19 +28,19 @@ const DATA = [
     user: 'Tony Hawk',
     comments: [
       {
-        id: 1,
-        user: 'JJ',
-        text: '1',
-      },
-      {
-        id: 2,
-        user: 'TT',
-        text: '2',
-      },
-      {
         id: 3,
-        user: 'ZZ',
-        text: '3',
+        user: 'James Johns',
+        text: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        id: 4,
+        user: 'Tina Turner',
+        text: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        id: 5,
+        user: 'Zoe Zandberg',
+        text: 'Lorem ipsum dolor sit amet',
       },
     ],
   },
@@ -50,19 +50,19 @@ const DATA = [
     user: 'Shawn White',
     comments: [
       {
-        id: 4,
-        user: 'JJ',
-        text: '1',
-      },
-      {
-        id: 5,
-        user: 'TT',
-        text: '2',
-      },
-      {
         id: 6,
-        user: 'ZZ',
-        text: '3',
+        user: 'James Johns',
+        text: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        id: 7,
+        user: 'Tina Turner',
+        text: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        id: 8,
+        user: 'Zoe Zandberg',
+        text: 'Lorem ipsum dolor sit amet',
       },
     ],
   },

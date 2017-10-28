@@ -2,7 +2,7 @@
   "name": "project-boilerplate",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config ./build/webpack.dev.js",
+    "start": "webpack-dev-server --config ./build/webpack.dev.js --host 0.0.0.0",
     "clean": "rimraf dist",
     "build": "npm run clean && NODE_ENV=production webpack --config ./build/webpack.prod.js -p --progress"
   },
