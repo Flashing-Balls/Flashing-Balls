@@ -4,6 +4,11 @@ import { Provider } from 'react-redux';
 import 'preact/devtools';
 
 import store from './store';
+import { ON_POSTS_FETCHED } from './actions';
+
+import FeedPage from './FeedPage';
+
+import getMockedPosts from './restApiMock';
 
 class App extends Preact.Component {
   render() {
@@ -14,7 +19,7 @@ class App extends Preact.Component {
             <Route
               path="/"
               exact
-              component={ () => ( <div /> ) }
+              component={ () => ( <FeedPage /> ) }
             />
           </div>
         </Provider>
@@ -24,3 +29,8 @@ class App extends Preact.Component {
 }
 
 Preact.render( <App />, document.getElementById( 'app' ) );
+
+getMockedPosts()
+  .then( ( data ) => {
+    store.dispatch( ON_POSTS_FETCHED( data ) );
+  } );
