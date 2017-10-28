@@ -26,7 +26,7 @@ export default class Post extends Preact.Component {
             { this.renderComments() }
           </section>
         </main>
-        <Input placeholder="Doin' great mate" nativeInput={ { type: 'text' } } />
+        <Input placeholder="Doin' great mate" type="text" />
       </article>
     );
   }

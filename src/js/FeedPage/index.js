@@ -1,6 +1,7 @@
 import Preact from 'preact';
 import { connect } from 'react-redux';
 import Post from './Post';
+import FloatingCta from '../FloatingCta';
 
 import { ON_POSTS_FETCHED } from '../actions';
 import getPosts from '../restApiMock';
@@ -15,10 +16,14 @@ class FeedPage extends Preact.Component {
       <Post key={ post.id } data={ post } />
     ) );
   }
+
   render() {
     return (
       <div>
-        {this.renderPosts()}
+        <main>
+          {this.renderPosts()}
+        </main>
+        <FloatingCta />
       </div>
     );
   }
