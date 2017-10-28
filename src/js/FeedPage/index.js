@@ -9,6 +9,7 @@ class FeedPage extends Preact.Component {
     ) );
   }
   render() {
+    console.log( 'render' );
     return (
       <div>
         {this.renderPosts()}

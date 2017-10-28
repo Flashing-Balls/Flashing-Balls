@@ -10,7 +10,7 @@ import { ON_POSTS_FETCHED } from './actions';
 import FeedPage from './FeedPage';
 import Header from './Header/';
 
-import getMockedPosts from './restApiMock';
+import { getPosts } from './restApiMock';
 
 class App extends Preact.Component {
   render() {
@@ -35,7 +35,7 @@ class App extends Preact.Component {
 
 Preact.render( <App />, document.getElementById( 'app' ) );
 
-getMockedPosts()
+getPosts()
   .then( ( data ) => {
     store.dispatch( ON_POSTS_FETCHED( data ) );
   } );
