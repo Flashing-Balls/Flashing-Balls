@@ -1,0 +1,55 @@
+.input-wrapper
+  display: block
+  margin-top: 8px
+  position: relative
+
+  input
+    width: 100%
+    appearance: none
+    border: 0
+    background: none
+    font-size: 1rem
+    font-family: 'Lato', sans-serif
+    color: $text-color
+    outline: 0
+
+    &:focus + .input-wrapper__line::after
+      transform: scaleX(1)
+
+  &__placeholder
+    position: absolute
+    top: 0
+    transition: visibility 0s 0s, opacity .1s 0s ease-in-out
+    opacity: 0.3
+
+    &--hidden
+      opacity: 0
+      visibility: hidden
+      transition: visibility 0s .1s, opacity .1s 0s ease-in-out
+
+  &__line
+    position: relative
+    width: 100%
+    padding-top: 8px
+
+    &::before
+      position: absolute
+      bottom: 0
+      left: 0
+      content: ""
+      display: block
+      width: 100%
+      height: 2px
+      background: rgba(255, 255, 255, 0.5)
+
+    &::after
+      position: absolute
+      bottom: 0
+      left: 0
+      content: ""
+      display: block
+      width: 100%
+      height: 2px
+      background: $accent-1
+      transform: scaleX(0)
+      transition: .2s transform ease-in-out
