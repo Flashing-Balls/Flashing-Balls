@@ -1,4 +1,6 @@
 import Preact from 'preact';
+import Video from '../Video';
+import './post.sass';
 
 export default class Post extends Preact.Component {
   renderComments() {
@@ -8,18 +10,25 @@ export default class Post extends Preact.Component {
       </li>
       ) );
   }
-
   render() {
     const { user, video } = this.props.data;
     return (
-      <div>
-        <p>{user}</p>
-        <p>{video}</p>
-        <ul className="comments">
-          {this.renderComments()}
-        </ul>
+      <article className="post">
+        <header className="post__header">
+          <p>{user}</p>
+        </header>
+        <main>
+          <section>
+            <Video url={ video } />
+          </section>
+          <section>
+            <ul className="comments">
+              { this.renderComments() }
+            </ul>
+          </section>
+        </main>
         <input />
-      </div>
+      </article>
     );
   }
 }

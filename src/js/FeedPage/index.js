@@ -1,7 +1,6 @@
 import Preact from 'preact';
 import { connect } from 'react-redux';
 import Post from './Post';
-import Header from './Header';
 
 class FeedPage extends Preact.Component {
   renderPosts() {
@@ -12,7 +11,6 @@ class FeedPage extends Preact.Component {
   render() {
     return (
       <div>
-        <Header />
         {this.renderPosts()}
       </div>
     );

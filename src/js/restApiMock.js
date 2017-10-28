@@ -1,7 +1,9 @@
+import videoUrl from '../img/video.jpg';
+
 const DATA = [
   {
     id: 0,
-    video: 'https://google.com',
+    video: videoUrl,
     user: 'John Doe',
     comments: [
       {
@@ -22,7 +24,7 @@ const DATA = [
     ],
   },
   { id: 1,
-    video: 'https://google.com',
+    video: videoUrl,
     user: 'Tony Hawk',
     comments: [
       {
@@ -44,7 +46,7 @@ const DATA = [
   },
   {
     id: 2,
-    video: 'https://google.com',
+    video: videoUrl,
     user: 'Shawn White',
     comments: [
       {
