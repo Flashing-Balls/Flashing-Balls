@@ -1,17 +1,13 @@
 import Preact from 'preact';
 import { connect } from 'react-redux';
-import Post from './Post.js';
-import Header from './Header.js';
+import Post from './Post';
+import Header from './Header';
 
 class FeedPage extends Preact.Component {
   renderPosts() {
-    return this.props.posts.map( ( post, index ) => {
-      return (
-        <div key={ `post-${ index }` }>
-          <Post data={ post } />
-        </div>
-      );
-    } );
+    return this.props.posts.map( post => (
+      <Post key={ post.id } data={ post } />
+    ) );
   }
   render() {
     return (
@@ -23,7 +19,7 @@ class FeedPage extends Preact.Component {
   }
 }
 
-const mapStateToProps = ( { feed } ) => ( { posts: feed.posts } );
+const mapStateToProps = ( { posts } ) => ( { posts } );
 
 const mapDispatchToProps = () => ( {
   onRefresh: () => {},

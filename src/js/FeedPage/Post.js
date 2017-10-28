@@ -1,19 +1,16 @@
 import Preact from 'preact';
-import { connect } from 'react-redux';
 
 export default class Post extends Preact.Component {
   renderComments() {
-    return this.props.data.comments.map( ( comment ) => {
-      return (
-        <div>
-          <p><b>{ comment.user }</b> { comment.text }</p>
-        </div>
-      );
-    } );
+    return this.props.data.comments.map( ( { user, text, id } ) => (
+      <li key={ id }>
+        <p><b>{ user }</b> { text }</p>
+      </li>
+      ) );
   }
 
-	render() {
-    const { user, video, comments } = this.props.data;
+  render() {
+    const { user, video } = this.props.data;
     return (
       <div>
         <p>{user}</p>
@@ -24,5 +21,5 @@ export default class Post extends Preact.Component {
         <input />
       </div>
     );
-	}
+  }
 }
