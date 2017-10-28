@@ -15,7 +15,7 @@ export default class Post extends Preact.Component {
     return (
       <article className="post">
         <header className="post__header">
-          <Avatar avatar={ user } fullname={ user } username={ user } />
+          <Avatar avatar={ user.avatar } fullname={ user.fullname } username={ user.username } />
         </header>
         <main>
           <section>
