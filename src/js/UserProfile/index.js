@@ -1,12 +1,13 @@
 import Preact from 'preact';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
-class UserProfile extends Preact.Component {
+export default class UserProfile extends Preact.Component {
   componentDidMount() {
   }
   render() {
     return (
       <div>
+        <p>{this.props.match.params.username}</p>
         <img />
         <ul>
           <li>All videos</li>

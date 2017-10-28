@@ -31,7 +31,7 @@ export default class User extends Preact.Component {
   render() {
     const username = this.props.username;
     return (
-      <Link to={ `user/${ username }` } className="avatar">
+      <Link to={ `/user/${ username }` } className="avatar">
         { this.renderAvatar() }
         { this.renderFullname() }
       </Link>

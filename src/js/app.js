@@ -2,6 +2,8 @@ import Preact from 'preact';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'preact/devtools';
+
+import UserProfile from './UserProfile/';
 import './main.sass';
 
 import store from './store';
@@ -23,8 +25,9 @@ class App extends Preact.Component {
               <Route
                 path="/"
                 exact
-                component={ () => ( <FeedPage /> ) }
+                component={ FeedPage }
               />
+              <Route path="/user/:username" component={ UserProfile } />
             </main>
           </div>
         </Provider>
