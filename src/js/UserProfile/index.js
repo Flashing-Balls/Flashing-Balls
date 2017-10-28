@@ -7,7 +7,7 @@ export default class UserProfile extends Preact.Component {
   render() {
     return (
       <div>
-        <p>{this.props.match.params.username}</p>
+        <p>{ this.props.match.params.username }</p>
         <img />
         <ul>
           <li>All videos</li>
