@@ -41,7 +41,7 @@ class Post extends Preact.Component {
             { this.renderComments() }
           </section>
         </main>
-        <Input placeholder="Doin' great mate" nativeInput={ { type: 'text', onInput: _ => this.onInputChange( _ ) } } />
+        <Input placeholder="Doin' great mate" type="text" onInput={ _ => this.onInputChange( _ ) } />
         <button
           onClick={ _ => this.onSubmit( _ ) }
         >Submit</button>

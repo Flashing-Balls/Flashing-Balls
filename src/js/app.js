@@ -2,15 +2,14 @@ import Preact from 'preact';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'preact/devtools';
+
+import UserProfile from './UserProfile';
 import './main.sass';
 
 import store from './store';
-import { ON_POSTS_FETCHED } from './actions';
 
 import FeedPage from './FeedPage';
 import Header from './Header/';
-
-import { getPosts } from './restApiMock';
 
 class App extends Preact.Component {
   render() {
@@ -23,8 +22,9 @@ class App extends Preact.Component {
               <Route
                 path="/"
                 exact
-                component={ () => ( <FeedPage /> ) }
+                component={ FeedPage }
               />
+              <Route path="/user/:username" component={ UserProfile } />
             </main>
           </div>
         </Provider>
@@ -34,8 +34,3 @@ class App extends Preact.Component {
 }
 
 Preact.render( <App />, document.getElementById( 'app' ) );
-
-getPosts()
-  .then( ( data ) => {
-    store.dispatch( ON_POSTS_FETCHED( data ) );
-  } );
