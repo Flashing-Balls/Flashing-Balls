@@ -32,6 +32,7 @@ module.exports = {
 
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "jsx-a11y/label-has-for": "off",
 
     "comma-dangle": ["error", {
       "arrays": "always-multiline",

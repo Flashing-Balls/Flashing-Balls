@@ -2,6 +2,7 @@ import Preact from 'preact';
 import Video from '../Video';
 import Avatar from '../Avatar';
 import Comment from './Comment/';
+import Input from '../Input/';
 import './post.sass';
 
 export default class Post extends Preact.Component {
@@ -25,7 +26,7 @@ export default class Post extends Preact.Component {
             { this.renderComments() }
           </section>
         </main>
-        <input />
+        <Input placeholder="Doin' great mate" nativeInput={ { type: 'text' } } />
       </article>
     );
   }
