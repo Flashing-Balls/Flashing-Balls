@@ -97,7 +97,11 @@ export function getPosts() {
   return axios.get( 'http://masterit-backend.azurewebsites.net/api/Posts/1', { Accept: 'application/json' } )
     .then( response => response.data )
     .then( data => data.sort( () => Math.random() - 0.5 ) );
-  // return Promise.resolve( DATA );
+}
+
+export function getPostById( UserId, SkillId ) {
+  return axios.get( `http://masterit-backend.azurewebsites.net/api/Posts?userId=${ UserId }&skillId=${ SkillId }`, { Accept: 'application/json' } )
+    .then( response => ( console.log( response.data ) ) );
 }
 
 export function sendComment() {

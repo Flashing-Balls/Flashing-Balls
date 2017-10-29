@@ -1,11 +1,22 @@
 .skill
   display: flex
-  align-items: center
+  align-items: flex-start
   padding: 0 16px
   margin-bottom: 16px
+  cursor: pointer
 
-  &:last-child
-    margin-bottom: 0
+  &__container
+    display: flex
+    align-items: center
+
+  &__image
+    flex: 1
+    padding-left: 16px
+
+    img
+      width: 100%
+  // &:last-child
+  //   margin-bottom: 0
 
   &__month
     color: $accent-2
