@@ -1,7 +1,7 @@
 import Preact from 'preact';
 import { connect } from 'react-redux';
-import { ON_USER_PROFILE_FETCH_START, ON_USER_PROFILE_FETCHED, ON_VIDEOS_FETCHED } from '../actions';
-import { getUserVideos, getUserProfile } from '../restApiMock';
+import { ON_USER_PROFILE_FETCH_START, ON_USER_PROFILE_FETCHED, ON_VIDEOS_FETCHED, ON_USER_SKILLS_FETCHED } from '../actions';
+import { getUserVideos, getUserProfile, getSkills } from '../restApiMock';
 import Grid from './Grid/';
 import Skills from './Skills/';
 
@@ -33,7 +33,21 @@ class UserProfile extends Preact.Component {
     const username = this.props.match.params.username;
     const isGridActive = this.state.activeTab === 'grid';
 
-    const currentTab = ( isGridActive ) ? <Grid /> : <Skills />;
+    const currentTab =
+      ( isGridActive ) ?
+        <Grid videos={ this.props.userVideos } /> :
+        <Skills skills={ this.props.userSkills } />;
+
+    // const props = {
+    //   userVideos: this.props.userVideos,
+    //   userSkills: this.props.userSkills,
+    //   userProfile: this.props.userProfile,
+    //   userProfileFetched: this.props.userProfileFetched,
+    //   userVideosFetched: this.props.userVideosFetched,
+    //   userSkillsFetched: this.props.userSkillsFetched,
+    // };
+
+    const user = this.props.userProfile;
 
     return (
       <div className="user-profile">
@@ -41,7 +55,7 @@ class UserProfile extends Preact.Component {
           <div className="user-profile__avatar">
             <img src={ avatarUrl } alt={ username } className="user-profile__avatar__img" />
           </div>
-          <span className="user-profile__name">Hugo Boss</span>
+          <span className="user-profile__name">{ user.FirstName } { user.LastName }</span>
         </header>
 
         <main>
@@ -91,6 +105,11 @@ const mapDispatchToProps = dispatch => ( {
     getUserVideos()
       .then( ( videos ) => {
         dispatch( ON_VIDEOS_FETCHED( videos ) );
+      } );
+
+    getSkills()
+      .then( ( videos ) => {
+        dispatch( ON_USER_SKILLS_FETCHED( videos ) );
       } );
   },
 } );

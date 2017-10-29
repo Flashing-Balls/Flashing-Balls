@@ -1,0 +1,18 @@
+.grid
+  display: flex
+  margin-top: 8px
+  flex-wrap: wrap
+
+  &__video
+    display: inline-block
+    flex-basis: 33.33%
+    background-size: cover
+    background-position: center
+    padding: 8px
+    box-sizing: border-box
+
+    &__img
+      &::after
+        content: ""
+        display: block
+        padding-bottom: 100%

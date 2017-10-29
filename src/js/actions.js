@@ -23,6 +23,14 @@ export const ON_USER_PROFILE_FETCHED = user => ( {
   user,
 } );
 
+export const ON_USER_SKILLS_FETCH_START = () => ( {
+  type: 'ON_USER_SKILLS_FETCH_START',
+} );
+
+export const ON_USER_SKILLS_FETCHED = skills => ( {
+  type: 'ON_USER_SKILLS_FETCHED',
+  skills,
+} );
 
 export const ON_VIDEOS_FETCHED = videos => ( {
   type: 'ON_VIDEOS_FETCHED',

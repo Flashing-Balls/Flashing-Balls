@@ -41,11 +41,11 @@ export default function reducer( state = defaultState, action ) {
     case 'ON_VIDEOS_FETCHED' : {
       return Object.assign( {}, state, { userVideosFetched: true, userVideos: action.videos } );
     }
-    case 'ON_SKILLS_FETCH_START': {
+    case 'ON_USER_SKILLS_FETCH_START': {
       return Object.assign( {}, state, { userSkillsFetched: false } );
     }
-    case 'ON_SKILLS_FETCHED' : {
-      return Object.assign( {}, state, { userSkillsFetched: true, userSkills: action.skills } );
+    case 'ON_USER_SKILLS_FETCHED' : {
+      return Object.assign( {}, state, { userSkillsFetched: true, userSkills: action.skills.filter( skill => skill.Progress >= 100 ) } );
     }
     case 'ON_USER_PROFILE_LEAVE': {
       return Object.assign( {}, state, {
