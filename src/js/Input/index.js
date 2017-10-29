@@ -12,20 +12,29 @@ export default class Input extends Preact.Component {
     };
   }
 
+  componentWillReceiveProps( nextProps ) {
+    if ( nextProps.value !== this.props.value ) {
+      this.setState( {
+        value: nextProps.value,
+      } ); 
+    }
+  }
+
   onInput( e ) {
     this.setState( {
       value: e.target.value,
     } );
 
     if ( this.props && this.props.onInput ) {
-      this.props.onInput( e );
+      this.onInputRoot( e );
     }
   }
 
   render() {
     const placeholderClass = ( this.state.value === '' ) ? 'visible' : 'hidden';
 
-    const { placeholder, ...rest } = this.props;
+    const { placeholder, onInput, ...rest } = this.props;
+    this.onInputRoot = onInput;
     const placholder = ( <span className={ `input-wrapper__placeholder input-wrapper__placeholder--${ placeholderClass }` }>{ this.props.placeholder }</span> );
 
     return (

@@ -26,7 +26,7 @@ class App extends Preact.Component {
                 component={ FeedPage }
               />
               <Route path="/user/:username" component={ UserProfile } />
-              <Route path="/videoupload/:username" component={ VideoUpload } />
+              <Route path="/upload/" component={ VideoUpload } />
             </main>
           </div>
         </Provider>

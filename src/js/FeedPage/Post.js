@@ -43,9 +43,21 @@ class Post extends Preact.Component {
             { this.renderComments() }
           </section>
         </main>
-        <form onSubmit={ _ => this.onSubmit( _ ) }>
-          <Input value={ this.state.inputValue } placeholder="Doin' great mate" type="text" onInput={ _ => this.onInputChange( _ ) } />
-          <button type="submit">Submit</button>
+
+        <form className="comment-input" onSubmit={ _ => this.onSubmit( _ ) }>
+          <Input
+            value={ this.state.inputValue }
+            placeholder="Doin' great mate"
+            type="text"
+            onInput={ _ => this.onInputChange( _ ) }
+          />
+          <button
+            className="comment-input__btn"
+            onClick={ _ => this.onSubmit( _ ) }
+            type="submit"
+          >
+            <i className="material-icons">send</i>
+          </button>
         </form>
       </article>
     );
