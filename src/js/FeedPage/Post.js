@@ -31,10 +31,11 @@ class Post extends Preact.Component {
   }
   render() {
     const { User, VideoUrl } = this.props.data;
+
     return (
       <article className="post">
         <header className="post__header">
-          <Avatar avatar="../img/avatar.jpg" fullname={ `${ User.FirstName } ${ User.LastName }` } username={ User.Username } />
+          <Avatar avatar={ User.AvatarUrl } fullname={ `${ User.FirstName } ${ User.LastName }` } username={ User.Username } />
         </header>
         <main>
           <section>

@@ -33,13 +33,25 @@ class Post extends Preact.Component {
     this.setState( { rated: true, feedback: 'Rejected' } );
   }
   renderFeedback() {
-    return ( <div>{this.state.feedback}</div> );
+    return (
+      <div className={ `ratable-feedback ratable-feedback--${ this.state.feedback.toLowerCase() }` }>
+        <i className="material-icons">{ this.state.feedback === 'Approved' ? 'done' : 'close' }</i>
+        { this.state.feedback }
+      </div>
+    );
   }
   renderButtons() {
     return (
-      <div>
-        <button onClick={ () => this.onApprove() }>Approve</button>
-        <button onClick={ () => this.onReject() }>Reject</button>
+      <div className="ratable-buttons-container">
+        <button className="ratable-button ratable-button--ok" onClick={ () => this.onApprove() }>
+          <i className="material-icons">done</i>
+          Approve
+        </button>
+
+        <button className="ratable-button ratable-button--nook" onClick={ () => this.onReject() }>
+          <i className="material-icons">close</i>
+          Reject
+        </button>
       </div>
     );
   }
@@ -53,7 +65,7 @@ class Post extends Preact.Component {
     return (
       <article className="post">
         <header className="post__header">
-          <Avatar avatar="../img/avatar.jpg" fullname={ `${ User.FirstName } ${ User.LastName }` } username={ User.Username } />
+          <Avatar avatar={ User.AvatarUrl } fullname={ `${ User.FirstName } ${ User.LastName }` } username={ User.Username } />
         </header>
         <main>
           <section>

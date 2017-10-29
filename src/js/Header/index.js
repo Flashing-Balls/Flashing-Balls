@@ -11,7 +11,10 @@ class Header extends Preact.Component {
       <nav className="header">
         <div className="header__container">
           <Link to="/" className="header__text">Master It!</Link>
-          <Avatar avatar={ 1 } username={ this.props.loggedUser.username } />
+          <Avatar
+            avatar={ this.props.loggedUser.AvatarUrl }
+            username={ this.props.loggedUser.Username }
+          />
         </div>
       </nav>
     );
