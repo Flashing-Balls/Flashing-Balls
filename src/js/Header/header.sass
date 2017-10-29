@@ -1,7 +1,4 @@
 .header
-  display: flex
-  align-items: center
-  justify-content: space-between
   position: fixed
   top: 0
   left: 0
@@ -12,6 +9,14 @@
   padding: 0 16px
   box-sizing: border-box
   z-index: 5
+
+  &__container
+    display: flex
+    height: 100%
+    align-items: center
+    justify-content: space-between
+    max-width: 1024px
+    margin: 0 auto
 
   &__text
     text-transform: uppercase

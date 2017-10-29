@@ -7,8 +7,10 @@ export default class Header extends Preact.Component {
   render() {
     return (
       <nav className="header">
-        <span className="header__text">Master It!</span>
-        <Avatar avatar={ 1 } />
+        <div className="header__container">
+          <span className="header__text">Master It!</span>
+          <Avatar avatar={ 1 } />
+        </div>
       </nav>
     );
   }
