@@ -14,7 +14,7 @@ class Post extends Preact.Component {
     this.state = {
       inputValue: '',
       rated: false,
-      feedback: 'feedback',
+      feedback: '',
     };
   }
   onInputChange( { target } ) {
