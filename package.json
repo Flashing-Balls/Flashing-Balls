@@ -4,7 +4,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.js --host 0.0.0.0",
     "clean": "rimraf dist",
-    "build": "npm run clean && NODE_ENV=production webpack --config ./build/webpack.prod.js -p --progress"
+    "build": "npm run clean && NODE_ENV=production webpack --config ./build/webpack.prod.js -p --progress",
+    "deploy": "sh ./build/deploy.sh https://github.com/Flashing-Balls/masterit-frontend gh-pages"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.3",
