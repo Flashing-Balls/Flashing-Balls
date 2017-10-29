@@ -18,8 +18,10 @@ class Post extends Preact.Component {
   onInputChange( { target } ) {
     this.setState( { inputValue: target.value } );
   }
-  onSubmit() {
+  onSubmit( e ) {
+    e.preventDefault();
     this.props.onCommentSubmit( this.state.inputValue, this.props.data.id );
+    this.setState( { inputValue: '' } );
   }
   renderComments() {
     return this.props.data.comments.map(
@@ -41,10 +43,10 @@ class Post extends Preact.Component {
             { this.renderComments() }
           </section>
         </main>
-        <Input placeholder="Doin' great mate" type="text" onInput={ _ => this.onInputChange( _ ) } />
-        <button
-          onClick={ _ => this.onSubmit( _ ) }
-        >Submit</button>
+        <form onSubmit={ _ => this.onSubmit( _ ) }>
+          <Input value={ this.state.inputValue } placeholder="Doin' great mate" type="text" onInput={ _ => this.onInputChange( _ ) } />
+          <button type="submit">Submit</button>
+        </form>
       </article>
     );
   }

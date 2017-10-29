@@ -17,7 +17,7 @@ export default function reducer( state = defaultState, action ) {
     }
     case 'ON_COMMENT_SUBMIT_START': {
       const newState = JSON.parse( JSON.stringify( state ) );
-      const comments = [ ...newState.posts[ action.id ].comments ];
+      const comments = newState.posts[ action.id ].comments;
       comments.push( { pending: true, id: comments.length, user: state.loggedUser, text: '' } );
       return newState;
     }
