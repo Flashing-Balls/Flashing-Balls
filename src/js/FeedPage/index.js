@@ -14,7 +14,8 @@ class FeedPage extends Preact.Component {
   }
 
   renderPosts() {
-    return this.props.posts.map( ( post ) => {
+    return this.props.posts.map( ( postArr ) => {
+      const post = postArr[ 0 ];
       if ( !post.IsRatable && !post.IsApproved ) {
         return <Post key={ post.Id } data={ post } />;
       } else if ( post.IsRatable && !post.IsApproved ) {
