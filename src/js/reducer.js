@@ -5,8 +5,9 @@ const defaultState = {
   userSkills: [],
   userSkillsFetched: false,
   loggedUser: {
-    username: 'hugoboss',
-    fullname: 'Hugo Boss',
+    Username: 'hugoboss',
+    FirstName: 'Hugo',
+    LastName: 'Boss',
   },
   userProfile: {},
   userProfileFetched: false,
@@ -19,15 +20,15 @@ export default function reducer( state = defaultState, action ) {
     }
     case 'ON_COMMENT_SUBMIT_START': {
       const newState = JSON.parse( JSON.stringify( state ) );
-      const comments = newState.posts[ action.id ].comments;
-      comments.push( { pending: true, id: comments.length, user: state.loggedUser, text: '' } );
+      const comments = newState.posts.find( ( { Id } ) => Id === action.id ).Comments;
+      comments.push( { pending: true, Id: comments.length, User: state.loggedUser, Content: '' } );
       return newState;
     }
     case 'ON_COMMENT_SUBMITTED': {
       const newState = JSON.parse( JSON.stringify( state ) );
-      const comments = newState.posts[ action.id ].comments;
+      const comments = newState.posts.find( ( { Id } ) => Id === action.id ).Comments;
       comments.splice( -1, 1, {
-        id: comments.length, user: state.loggedUser, text: action.comment,
+        Id: comments.length, User: state.loggedUser, Content: action.comment,
       } );
       return newState;
     }

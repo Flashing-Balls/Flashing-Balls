@@ -1,6 +1,7 @@
 import Preact from 'preact';
 import { connect } from 'react-redux';
 import Post from './Post';
+import RatablePost from './RatablePost';
 import FloatingCta from '../FloatingCta';
 
 import { ON_POSTS_FETCHED } from '../actions';
@@ -13,7 +14,9 @@ class FeedPage extends Preact.Component {
 
   renderPosts() {
     return this.props.posts.map( post => (
-      <Post key={ post.id } data={ post } />
+      post.IsRatable ?
+        <RatablePost key={ post.id } data={ post } /> :
+        <Post key={ post.id } data={ post } />
     ) );
   }
 
