@@ -1,0 +1,42 @@
+.user-profile
+  &__header
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding-top: 16px
+
+  &__name
+    font-size: 1.5em
+    font-weight: 700
+    margin-top: 8px
+
+  &__avatar
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 208px
+    height: 208px
+    background: linear-gradient(33deg, $accent-1 10%, $accent-2 60%)
+    border-radius: 50%
+
+    &__img
+      width: 196px
+      height: 196px
+      border-radius: 50%
+
+  &__nav
+    display: flex
+    justify-content: center
+    margin-top: 8px
+
+    &__text
+      display: block
+      font-size: 1.05em
+      cursor: pointer
+      outline: 0
+      width: 112px
+      text-align: center
+
+      &--active
+        font-weight: 700
+        border-bottom: 2px solid $text-color
