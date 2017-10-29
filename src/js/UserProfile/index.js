@@ -19,13 +19,11 @@ export default class UserProfile extends Preact.Component {
     );
   }
 }
-
-/*
-const mapStateToProps = ( { feed } ) => ( { posts: feed.posts } );
-
-const mapDispatchToProps = () => ( {
-  onRefresh: () => {},
-} );
-
-export default connect( mapStateToProps, mapDispatchToProps )( FeedPage );
-*/
+//
+// const mapStateToProps = ( { feed } ) => ( { posts: feed.posts } );
+//
+// const mapDispatchToProps = () => ( {
+//   onRefresh: () => {},
+// } );
+//
+// export default connect( mapStateToProps, mapDispatchToProps )( UserProfile );

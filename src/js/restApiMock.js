@@ -92,6 +92,18 @@ const DATA = [
   },
 ];
 
-export default function getMockedPostscallback() {
+export function getPosts() {
   return Promise.resolve( DATA );
+}
+
+export function sendComment() {
+  return Promise.resolve();
+}
+
+export function getUserVideos() {
+  return Promise.resolve();
+}
+
+export function getSkills() {
+  return Promise.resolve();
 }

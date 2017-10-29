@@ -4,7 +4,7 @@ import Post from './Post';
 import FloatingCta from '../FloatingCta';
 
 import { ON_POSTS_FETCHED } from '../actions';
-import getPosts from '../restApiMock';
+import { getPosts } from '../restApiMock';
 
 class FeedPage extends Preact.Component {
   componentDidMount() {
@@ -18,6 +18,7 @@ class FeedPage extends Preact.Component {
   }
 
   render() {
+    console.log( 'render' );
     return (
       <div>
         <main>

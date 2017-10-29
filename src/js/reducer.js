@@ -4,6 +4,10 @@ const defaultState = {
   userVideosFetched: false,
   userSkills: [],
   userSkillsFetched: false,
+  loggedUser: {
+    username: 'hugoboss',
+    fullname: 'Hugo Boss',
+  },
 };
 
 export default function reducer( state = defaultState, action ) {
@@ -12,15 +16,17 @@ export default function reducer( state = defaultState, action ) {
       return Object.assign( {}, state, { posts: action.posts } );
     }
     case 'ON_COMMENT_SUBMIT_START': {
-      const newState = Object.assign( {}, state );
-
-      newState.posts[ action.id ].comments.push( { pending: true } );
-
+      const newState = JSON.parse( JSON.stringify( state ) );
+      const comments = [ ...newState.posts[ action.id ].comments ];
+      comments.push( { pending: true, id: comments.length, user: state.loggedUser, text: '' } );
       return newState;
     }
     case 'ON_COMMENT_SUBMITTED': {
-      const newState = Object.assign( {}, state );
-      newState.posts[ action.id ].comments.splice( -1, 1, action.comment );
+      const newState = JSON.parse( JSON.stringify( state ) );
+      const comments = newState.posts[ action.id ].comments;
+      comments.splice( -1, 1, {
+        id: comments.length, user: state.loggedUser, text: action.comment,
+      } );
       return newState;
     }
     case 'ON_VIDEOS_FETCH_START': {
