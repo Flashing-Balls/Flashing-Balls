@@ -1,8 +1,6 @@
 import Preact from 'preact';
 import { Link } from 'react-router-dom';
 
-import avatarUrl from '../../img/avatar.jpg';
-
 import './avatar.sass';
 
 export default class User extends Preact.Component {
@@ -13,8 +11,7 @@ export default class User extends Preact.Component {
 
     return (
       <div className="avatar__image-cont">
-        {/* <img alt={ `${ this.props.fullname || 'avatar' }` } src={ this.props.avatar } /> */}
-        <img alt={ `${ this.props.fullname || 'avatar' }` } src={ avatarUrl } className="avatar__image" />
+        <img alt={ `${ this.props.fullname || 'avatar' }` } src={ `https://i.imgur.com/${ this.props.avatar }.png` } className="avatar__image" />
       </div>
     );
   }

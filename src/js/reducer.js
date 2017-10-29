@@ -5,9 +5,10 @@ const defaultState = {
   userSkills: [],
   userSkillsFetched: false,
   loggedUser: {
-    Username: 'hugoboss',
-    FirstName: 'Hugo',
-    LastName: 'Boss',
+    Username: 'hawk',
+    FirstName: 'Tony',
+    LastName: 'Hawk',
+    AvatarUrl: 'ZKivcKo',
   },
   userProfile: {},
   userProfileFetched: false,
@@ -45,7 +46,10 @@ export default function reducer( state = defaultState, action ) {
       return Object.assign( {}, state, { userSkillsFetched: false } );
     }
     case 'ON_USER_SKILLS_FETCHED' : {
-      return Object.assign( {}, state, { userSkillsFetched: true, userSkills: action.skills.filter( skill => skill.Progress >= 100 ) } );
+      return Object.assign( {}, state, {
+        userSkillsFetched: true,
+        userSkills: action.skills.filter( skill => skill.Progress >= 100 ),
+      } );
     }
     case 'ON_USER_PROFILE_LEAVE': {
       return Object.assign( {}, state, {

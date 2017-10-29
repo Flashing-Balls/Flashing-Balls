@@ -7,8 +7,6 @@ import Skills from './Skills/';
 
 import './user_profile.sass';
 
-import avatarUrl from '../../img/avatar.jpg';
-
 class UserProfile extends Preact.Component {
 
   constructor() {
@@ -53,7 +51,7 @@ class UserProfile extends Preact.Component {
       <div className="user-profile">
         <header className="user-profile__header">
           <div className="user-profile__avatar">
-            <img src={ avatarUrl } alt={ username } className="user-profile__avatar__img" />
+            <img src={ `https://i.imgur.com/${ user.AvatarUrl }.png` } alt={ username } className="user-profile__avatar__img" />
           </div>
           <span className="user-profile__name">{ user.FirstName } { user.LastName }</span>
         </header>

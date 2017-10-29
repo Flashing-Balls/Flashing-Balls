@@ -33,3 +33,54 @@
 
     input
       padding-right: 24px
+
+.ratable-buttons-container
+  margin-top: 8px
+
+.ratable-feedback
+  margin-top: 8px
+  display: flex
+  align-items: center
+  height: 32px
+
+  i
+    margin-right: 8px
+
+  &--approved
+    color: $accent-2
+
+  &--rejected
+    color: $error-1
+
+.ratable-button
+  display: inline-flex
+  align-items: center
+  color: $text-color
+  padding: 4px 16px
+  font-size: 1rem
+  font-style: 'Lato', sans-serif
+  border: 0
+  border-radius: 20px
+  box-shadow: $shadow-1
+  margin-right: 8px
+  cursor: pointer
+  outline: 0
+  transition: .15s box-shadow ease-in-out, .15s transform ease-in-out
+  transform: translateY(0px)
+
+  &:hover:active
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.3)
+    transform: translateY(0px)
+
+  &:hover
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4)
+    transform: translateY(-1px)
+
+  i
+    margin-right: 8px
+
+  &--ok
+    background: linear-gradient(0deg, $accent-1 0%, $accent-2 100%)
+
+  &--nook
+    background: linear-gradient(0deg, $error-1 0%, $error-2 100%)
