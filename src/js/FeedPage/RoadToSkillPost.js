@@ -12,9 +12,7 @@ class Post extends Preact.Component {
   constructor() {
     super();
     this.state = {
-      inputValue: '',
-      rated: false,
-      feedback: 'feedback',
+      inputValue: 'dupa',
     };
   }
   onInputChange( { target } ) {
@@ -25,23 +23,6 @@ class Post extends Preact.Component {
 
     this.props.onCommentSubmit( this.state.inputValue, this.props.data.Id );
     this.setState( { inputValue: '' } );
-  }
-  onApprove() {
-    this.setState( { rated: true, feedback: 'Approved' } );
-  }
-  onReject() {
-    this.setState( { rated: true, feedback: 'Rejected' } );
-  }
-  renderFeedback() {
-    return ( <div>{this.state.feedback}</div> );
-  }
-  renderButtons() {
-    return (
-      <div>
-        <button onClick={ () => this.onApprove() }>Approve</button>
-        <button onClick={ () => this.onReject() }>Reject</button>
-      </div>
-    );
   }
   renderComments() {
     return this.props.data.Comments.map(
@@ -59,15 +40,11 @@ class Post extends Preact.Component {
           <section>
             <Video url={ VideoUrl } />
           </section>
-          {
-            this.state.rated ?
-            this.renderFeedback() :
-            this.renderButtons()
-          }
           <section className="comments">
             { this.renderComments() }
           </section>
         </main>
+
         <form className="comment-input" onSubmit={ _ => this.onSubmit( _ ) }>
           <Input
             value={ this.state.inputValue }

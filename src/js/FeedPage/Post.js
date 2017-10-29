@@ -20,7 +20,7 @@ class Post extends Preact.Component {
   }
   onSubmit( e ) {
     e.preventDefault();
-    console.log( this.props.data.Id );
+
     this.props.onCommentSubmit( this.state.inputValue, this.props.data.Id );
     this.setState( { inputValue: '' } );
   }

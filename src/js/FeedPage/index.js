@@ -2,6 +2,7 @@ import Preact from 'preact';
 import { connect } from 'react-redux';
 import Post from './Post';
 import RatablePost from './RatablePost';
+import RoadToSkillPost from './RoadToSkillPost';
 import FloatingCta from '../FloatingCta';
 
 import { ON_POSTS_FETCHED } from '../actions';
@@ -13,11 +14,16 @@ class FeedPage extends Preact.Component {
   }
 
   renderPosts() {
-    return this.props.posts.map( post => (
-      post.IsRatable ?
-        <RatablePost key={ post.id } data={ post } /> :
-        <Post key={ post.id } data={ post } />
-    ) );
+    return this.props.posts.map( ( post ) => {
+      if ( !post.IsRatable && !post.IsApproved ) {
+        return <Post key={ post.Id } data={ post } />;
+      } else if ( post.IsRatable && !post.IsApproved ) {
+        return <RatablePost key={ post.Id } data={ post } />;
+      } else if ( !post.IsRatable && post.IsApproved ) {
+        return <RoadToSkillPost key={ post.Id } data={ post } />;
+      }
+      throw new Error( 'Dupa' );
+    } );
   }
 
   render() {
