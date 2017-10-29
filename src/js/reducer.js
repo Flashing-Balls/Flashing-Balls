@@ -21,13 +21,13 @@ export default function reducer( state = defaultState, action ) {
     }
     case 'ON_COMMENT_SUBMIT_START': {
       const newState = JSON.parse( JSON.stringify( state ) );
-      const comments = newState.posts.find( ( { Id } ) => Id === action.id ).Comments;
+      const comments = newState.posts[ 0 ].find( ( { Id } ) => Id === action.id ).Comments;
       comments.push( { pending: true, Id: comments.length, User: state.loggedUser, Content: '' } );
       return newState;
     }
     case 'ON_COMMENT_SUBMITTED': {
       const newState = JSON.parse( JSON.stringify( state ) );
-      const comments = newState.posts.find( ( { Id } ) => Id === action.id ).Comments;
+      const comments = newState.posts[ 0 ].find( ( { Id } ) => Id === action.id ).Comments;
       comments.splice( -1, 1, {
         Id: comments.length, User: state.loggedUser, Content: action.comment,
       } );
