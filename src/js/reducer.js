@@ -8,6 +8,8 @@ const defaultState = {
     username: 'hugoboss',
     fullname: 'Hugo Boss',
   },
+  userProfile: {},
+  userProfileFetched: false,
 };
 
 export default function reducer( state = defaultState, action ) {
@@ -29,8 +31,11 @@ export default function reducer( state = defaultState, action ) {
       } );
       return newState;
     }
-    case 'ON_VIDEOS_FETCH_START': {
-      return Object.assign( {}, state, { userVideosFetched: false } );
+    case 'ON_USER_PROFILE_FETCH_START': {
+      return Object.assign( {}, state, { userVideosFetched: false, userProfileFetched: false } );
+    }
+    case 'ON_USER_PROFILE_FETCHED' : {
+      return Object.assign( {}, state, { userProfileFetched: true, userProfile: action.user } );
     }
     case 'ON_VIDEOS_FETCHED' : {
       return Object.assign( {}, state, { userVideosFetched: true, userVideos: action.videos } );
@@ -45,8 +50,10 @@ export default function reducer( state = defaultState, action ) {
       return Object.assign( {}, state, {
         userSkillsFetched: false,
         userVideosFetched: false,
+        userProfileFetched: false,
         userVideos: [],
         userSkills: [],
+        userProfile: {},
       } );
     }
     // no default

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import videoUrl from '../img/video.jpg';
 
 const user1 = {
@@ -93,7 +94,9 @@ const DATA = [
 ];
 
 export function getPosts() {
-  return Promise.resolve( DATA );
+  return axios.get( 'http://masterit-backend.azurewebsites.net/api/Posts/1', { Accept: 'application/json' } )
+    .then( response => response.data );
+  // return Promise.resolve( DATA );
 }
 
 export function sendComment() {
@@ -101,9 +104,13 @@ export function sendComment() {
 }
 
 export function getUserVideos() {
-  return Promise.resolve();
+  return Promise.resolve( [] );
 }
 
 export function getSkills() {
   return Promise.resolve();
+}
+
+export function getUserProfile() {
+  return Promise.resolve( Object.assign( {}, user4, { id: 4 } ) );
 }
