@@ -12,7 +12,8 @@ class Post extends Preact.Component {
   constructor() {
     super();
     this.state = {
-      inputValue: 'dupa',
+      inputValue: '',
+      activeIndex: 0,
     };
   }
   onInputChange( { target } ) {
@@ -29,8 +30,16 @@ class Post extends Preact.Component {
       ( { User, Content, Id } ) => ( <Comment key={ Id } user={ User } text={ Content } /> )
     );
   }
+  renderHistoryButtons() {
+    return this.props.data.map( ( _, i ) => (
+      <button
+        className={ i === this.state.activeIndex ? 'active' : '' }
+        onClick={ () => this.setState( { activeIndex: i } ) }
+      >O</button>
+  ) );
+  }
   render() {
-    const { User, VideoUrl } = this.props.data[ 0 ];
+    const { User, VideoUrl } = this.props.data[ this.state.activeIndex ];
     return (
       <article className="post">
         <header className="post__header">
@@ -38,7 +47,7 @@ class Post extends Preact.Component {
         </header>
         <main>
           <section>
-            <Video url={ VideoUrl } />
+            <Video url={ VideoUrl } children={ this.renderHistoryButtons() } />
           </section>
           <section className="comments">
             { this.renderComments() }
