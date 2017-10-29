@@ -1,0 +1,35 @@
+.skill
+  display: flex
+  align-items: center
+  padding: 0 16px
+  margin-bottom: 16px
+
+  &:last-child
+    margin-bottom: 0
+
+  &__month
+    color: $accent-2
+    margin-right: 8px
+    font-size: .75em
+
+  &__day
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: .75em
+    width: 36px
+    height: 36px
+    background: $accent-2
+    color: $background-color
+    border-radius: 50%
+    box-shadow: $shadow-1
+    box-sizing: border-box
+
+    &--open
+      background: $background-color
+      color: $accent-2
+      border: 3px solid $accent-2
+
+  &__name
+    color: $accent-2
+    margin-left: 8px

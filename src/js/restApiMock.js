@@ -104,13 +104,16 @@ export function sendComment() {
 }
 
 export function getUserVideos() {
-  return Promise.resolve( [] );
+  return axios.get( 'http://masterit-backend.azurewebsites.net/api/Users/4/posts', { Accept: 'application/json' } )
+    .then( response => response.data );
 }
 
 export function getSkills() {
-  return Promise.resolve();
+  return axios.get( 'http://masterit-backend.azurewebsites.net/api/SkillProgresses/4', { Accept: 'application/json' } )
+    .then( response => response.data );
 }
 
-export function getUserProfile() {
-  return Promise.resolve( Object.assign( {}, user4, { id: 4 } ) );
+export function getUserProfile( username ) {
+  return axios.get( `http://masterit-backend.azurewebsites.net/api/Users/${ username }`, { Accept: 'application/json' } )
+    .then( response => response.data );
 }
