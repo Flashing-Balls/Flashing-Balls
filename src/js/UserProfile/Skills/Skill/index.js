@@ -41,8 +41,8 @@ export default class Skill extends Preact.Component {
       return (
         <section className="skill">
           <div className="skill__container">
-            <span className="skill__month">{ date.format( 'MMM' ) }</span>
-            <span className="skill__day skill__day--open">{ date.format( 'DD' ) }</span>
+            <span className="skill__month">{ postDate.format( 'MMM' ) }</span>
+            <span className="skill__day skill__day--open">{ postDate.format( 'D' ) }</span>
             <span className="skill__name" />
           </div>
           <div className="skill__image"><img alt="video" src={ `http://img.youtube.com/vi/${ post.VideoUrl }/0.jpg` } /></div>
@@ -52,10 +52,10 @@ export default class Skill extends Preact.Component {
 
     return (
       <div>
-        <section className="skill" onClick={ this.onOpen }>
+        <section role="button" tabIndex={ 0 } className="skill" onClick={ this.onOpen }>
           <div className="skill__container">
             <span className="skill__month">{ date.format( 'MMM' ) }</span>
-            <span className={ `skill__day${ this.state.isVisible && this.state.isFetched ? ' skill__day--open' : '' }` }>{ date.format( 'DD' ) }</span>
+            <span className={ `skill__day${ this.state.isVisible && this.state.isFetched ? ' skill__day--open' : '' }` }>{ date.format( 'D' ) }</span>
             <span className="skill__name">{this.props.skill.Skill.Name}</span>
           </div>
         </section>

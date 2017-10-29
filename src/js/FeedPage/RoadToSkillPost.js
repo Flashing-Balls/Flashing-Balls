@@ -29,7 +29,6 @@ class Post extends Preact.Component {
     this.setState( { inputValue: '' } );
   }
   renderComments() {
-    console.log( this.state.activeIndex );
     return this.props.data[ this.state.activeIndex ].Comments.map(
       ( { User, Content, Id } ) => ( <Comment key={ Id } user={ User } text={ Content } /> )
     );
@@ -38,7 +37,7 @@ class Post extends Preact.Component {
     const btns = this.props.data.map( ( _, i ) => (
       <button
         className={ `history-button${ i === this.state.activeIndex ? ' history-button--active' : '' }` }
-        onClick={ () => { console.log( i ); this.setState( { activeIndex: i } ); } }
+        onClick={ () => { this.setState( { activeIndex: i } ); } }
       />
   ) );
 
@@ -55,7 +54,6 @@ class Post extends Preact.Component {
   }
 
   render() {
-    console.log( 'render' );
     const { User, VideoUrl } = this.props.data[ this.state.activeIndex ];
     return (
       <article className="post">

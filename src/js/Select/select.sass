@@ -1,0 +1,49 @@
+.select
+  position: relative
+  margin-top: .5em
+
+  &--open .select__dropdown
+    opacity: 1
+    visibility: visible
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility 0s 0s ease-in-out
+    transform: translateY(0)
+
+  &__dropdown
+    display: flex
+    flex-direction: column
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    opacity: 0
+    border: 0
+    border-radius: 2px
+    box-shadow: $shadow-1
+    transform: translateY(10%)
+    overflow: hidden
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility 0s .2s ease-in-out
+    visibility: hidden
+    z-index: 5
+
+    button
+      display: block
+      border: 0
+      font-size: 1rem
+      background: $background-color
+      color: $text-color
+      font-family: 'Lato', sans-serif
+      height: 40px
+      margin: 0
+      padding: 0
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+      cursor: pointer
+      transition: background .2s ease-in-out
+      text-align: left
+      padding-left: 32px
+      outline: 0
+
+      &:hover
+        background: mix($background-color, #fff, 80%)
+
+      &:last-child
+        border-bottom: 0
