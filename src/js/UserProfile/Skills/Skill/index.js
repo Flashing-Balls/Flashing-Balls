@@ -43,7 +43,7 @@ export default class Skill extends Preact.Component {
           <div className="skill__container">
             <span className="skill__month">{ date.format( 'MMM' ) }</span>
             <span className="skill__day skill__day--open">{ date.format( 'DD' ) }</span>
-            <span className="skill__name">{'hi!'}</span>
+            <span className="skill__name" />
           </div>
           <div className="skill__image"><img alt="video" src={ `http://img.youtube.com/vi/${ post.VideoUrl }/0.jpg` } /></div>
         </section>

@@ -31,13 +31,25 @@ class Post extends Preact.Component {
     );
   }
   renderHistoryButtons() {
-    return this.props.data.map( ( _, i ) => (
+    const btns = this.props.data.map( ( _, i ) => (
       <button
-        className={ i === this.state.activeIndex ? 'active' : '' }
+        className={ `history-button${ i === this.state.activeIndex ? ' history-button--active' : '' }` }
         onClick={ () => this.setState( { activeIndex: i } ) }
-      >O</button>
+      />
   ) );
+
+    const out = [];
+
+    btns.forEach( ( btn, i ) => {
+      out.push( btn );
+      if ( i < btns.length - 1 ) {
+        out.push( <div className="history-button-line" /> );
+      }
+    } );
+
+    return out;
   }
+
   render() {
     const { User, VideoUrl } = this.props.data[ this.state.activeIndex ];
     return (
@@ -47,7 +59,11 @@ class Post extends Preact.Component {
         </header>
         <main>
           <section>
-            <Video url={ VideoUrl } children={ this.renderHistoryButtons() } />
+            <Video url={ VideoUrl }>
+              <div className="history-button-container">
+                { this.renderHistoryButtons() }
+              </div>
+            </Video>
           </section>
           <section className="comments">
             { this.renderComments() }

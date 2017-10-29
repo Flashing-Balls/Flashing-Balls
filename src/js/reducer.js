@@ -8,7 +8,7 @@ const defaultState = {
     Username: 'hawk',
     FirstName: 'Tony',
     LastName: 'Hawk',
-    AvatarUrl: 'ZKivcKo',
+    AvatarUrl: 'flD7s1D',
   },
   userProfile: {},
   userProfileFetched: false,

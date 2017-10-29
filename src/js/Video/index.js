@@ -3,7 +3,7 @@ import './video.sass';
 
 export default ( { url, children } ) => (
   <div className="video">
-    {children}
+    { children }
     <iframe
       title="1"
       className="video__iframe"
