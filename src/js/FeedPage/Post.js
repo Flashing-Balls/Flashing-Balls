@@ -24,20 +24,20 @@ class Post extends Preact.Component {
     this.setState( { inputValue: '' } );
   }
   renderComments() {
-    return this.props.data.comments.map(
-      ( { user, text, id } ) => ( <Comment key={ id } user={ user } text={ text } /> )
+    return this.props.data.Comments.map(
+      ( { User, Content, Id } ) => ( <Comment key={ Id } user={ User } text={ Content } /> )
     );
   }
   render() {
-    const { user, video } = this.props.data;
+    const { User, VideoUrl } = this.props.data;
     return (
       <article className="post">
         <header className="post__header">
-          <Avatar avatar={ user.avatar } fullname={ user.fullname } username={ user.username } />
+          <Avatar avatar="../img/avatar.jpg" fullname={ `${ User.FirstName } ${ User.LastName }` } username={ User.Username } />
         </header>
         <main>
           <section>
-            <Video url={ video } />
+            <Video url={ VideoUrl } />
           </section>
           <section className="comments">
             { this.renderComments() }
