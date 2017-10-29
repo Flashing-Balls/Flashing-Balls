@@ -21,7 +21,7 @@ class FeedPage extends Preact.Component {
       } else if ( post.IsRatable && !post.IsApproved ) {
         return <RatablePost key={ post.Id } data={ post } />;
       } else if ( !post.IsRatable && post.IsApproved ) {
-        return <RoadToSkillPost key={ post.Id } data={ post } />;
+        return <RoadToSkillPost key={ post.Id } data={ postArr } />;
       }
       throw new Error( 'Dupa' );
     } );

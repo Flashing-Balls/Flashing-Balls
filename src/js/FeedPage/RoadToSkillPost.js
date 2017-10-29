@@ -25,12 +25,12 @@ class Post extends Preact.Component {
     this.setState( { inputValue: '' } );
   }
   renderComments() {
-    return this.props.data.Comments.map(
+    return this.props.data[ 0 ].Comments.map(
       ( { User, Content, Id } ) => ( <Comment key={ Id } user={ User } text={ Content } /> )
     );
   }
   render() {
-    const { User, VideoUrl } = this.props.data;
+    const { User, VideoUrl } = this.props.data[ 0 ];
     return (
       <article className="post">
         <header className="post__header">
