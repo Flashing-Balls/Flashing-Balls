@@ -11,7 +11,7 @@ export default class User extends Preact.Component {
 
     return (
       <div className="avatar__image-cont">
-        <img alt={ `${ this.props.fullname || 'avatar' }` } src={ `https://i.imgur.com/${ this.props.avatar }.png` } className="avatar__image" />
+        <div alt={ `${ this.props.fullname || 'avatar' }` } style={ { backgroundImage: `url(https://i.imgur.com/${ this.props.avatar }.png)` } } className="avatar__image" />
       </div>
     );
   }

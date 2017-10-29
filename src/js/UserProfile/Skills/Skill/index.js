@@ -45,7 +45,15 @@ export default class Skill extends Preact.Component {
             <span className="skill__day skill__day--open">{ postDate.format( 'D' ) }</span>
             <span className="skill__name" />
           </div>
-          <div className="skill__image"><img alt="video" src={ `http://img.youtube.com/vi/${ post.VideoUrl }/0.jpg` } /></div>
+          <div className="skill__image">
+            <iframe
+              title="1"
+              className="grid__video__img"
+              src={ `https://www.youtube.com/embed/${ post.VideoUrl }` }
+              frameBorder="0"
+              allowFullScreen
+            />
+          </div>
         </section>
       );
     } );
