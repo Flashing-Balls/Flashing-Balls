@@ -1,5 +1,4 @@
 import axios from 'axios';
-import videoUrl from '../img/video.jpg';
 
 export function getPosts() {
   return axios.get( 'http://masterit-backend.azurewebsites.net/api/Posts/1', { Accept: 'application/json' } )
