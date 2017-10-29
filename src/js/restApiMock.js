@@ -1,30 +1,6 @@
 import axios from 'axios';
 import videoUrl from '../img/video.jpg';
 
-const user1 = {
-  username: 'johndoe',
-  fullname: 'John Doe',
-  avatar: '../img/avatar.jpg',
-};
-
-const user2 = {
-  username: 'tinaturner',
-  fullname: 'Tina Turner',
-  avatar: '../img/avatar.jpg',
-};
-
-const user3 = {
-  username: 'zoezandbgerg',
-  fullname: 'Zoe Zandberg',
-  avatar: '../img/avatar.jpg',
-};
-
-const user4 = {
-  username: 'tonyhawk',
-  fullname: 'Tony Hawk',
-  avatar: '../img/avatar.jpg',
-};
-
 export function getPosts() {
   return axios.get( 'http://masterit-backend.azurewebsites.net/api/Posts/1', { Accept: 'application/json' } )
     .then( response => response.data )
